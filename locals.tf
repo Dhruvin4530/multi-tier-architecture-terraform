@@ -18,7 +18,7 @@ locals {
   nat_gw_name              = "prod-nat-gateway"
   public_rt_name           = "prod-public-route-table"
   private_rt_name          = "prod-private-route-table"
-  key_name                 = "Demo-key"
+  key_name                 = "multi-tier"
   db_name                  = "prod-db"
   db_username              = "admin"
   db_subnet_group_name     = "prod-db-subnet-group"
@@ -41,5 +41,4 @@ locals {
   web_min_size             = 1
   app_max_size             = 2
   app_min_size             = 1
-
 }
