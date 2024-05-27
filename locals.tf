@@ -19,7 +19,7 @@ locals {
   public_rt_name           = "prod-public-route-table"
   private_rt_name          = "prod-private-route-table"
   key_name                 = "multi-tier"
-  db_name                  = "prod-db"
+  db_name                  = "proddb"
   db_username              = "admin"
   db_subnet_group_name     = "prod-db-subnet-group"
   db_sg_name               = "prod-db-security-group"
