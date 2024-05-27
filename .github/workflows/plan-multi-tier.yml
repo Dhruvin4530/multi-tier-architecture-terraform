@@ -5,7 +5,10 @@ on:
 defaults:
   run:
     shell: bash
-
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+  
 jobs:
   validate:
     name: Validate
