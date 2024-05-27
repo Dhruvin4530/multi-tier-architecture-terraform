@@ -1,0 +1,26 @@
+name: Apply multi tier 
+concurrency: apply-multi-tier
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  plan:
+    name: Plan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - run: terraform init
+      - run: terraform plan
+
+  apply:
+    needs: plan
+    name: Apply
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - run: terraform init
+      - run: terraform apply -auto-approve -compact-warnings -lock-timeout=300s -no-color
