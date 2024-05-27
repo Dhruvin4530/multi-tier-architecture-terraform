@@ -46,7 +46,7 @@ resource "aws_launch_template" "template-web" {
     security_groups = [var.web_sg_id]
   }
 
-  user_data = filebase64("./user-data.sh")
+  user_data = filebase64("user-data.sh")
   tag_specifications {
 
     resource_type = "instance"
