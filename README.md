@@ -25,9 +25,11 @@ This project allows us to deploy a highly available, scalable, and secure multi-
   cd multi-tier-architecture-terraform
   ```
 
-* Add the AWS credentials to the `provider.tf` file and change the dynamodb table name as per yours.
+* Add the AWS credentials to the `provider.tf` file and change your dynamodb table name.
   
 * Edit `terraform.tfvars` as per your need.
+
+* This code will fetch the database password from AWS secrets manager so, you need to store your password with db_password key in AWS secrets manager.
 
   
 * Initialize Terraform
@@ -46,6 +48,8 @@ This project allows us to deploy a highly available, scalable, and secure multi-
 * Change the dynamodb table name as per yours to the `provider.tf` file
 
 * Edit `terraform.tfvars` as per your need.
+
+* This code will fetch the database password from AWS secrets manager so, you need to store your password with db_password key in AWS secrets manager.
 
 * This repository contains 2 workflow. One will trigger on every pull request which will validate the terraform code & one will trigger on commit in main branch which will deploy the changes.
 
